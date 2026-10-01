@@ -1,0 +1,62 @@
+{
+  "preprocess": {
+    "image_size": 224,
+    "interpolation": "bilinear",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "to_rgb": true
+  },
+  "texture": {
+    "backbone": "resnet50",
+    "pretraining": "imagenet",
+    "feature_layers": [
+      2,
+      3
+    ],
+    "frozen": true,
+    "replace_stride_with_dilation": false
+  },
+  "context": {
+    "backbone": "facebook/dinov3-vitl16-pretrain-lvd1689m",
+    "local_files_only": true,
+    "weights_dir": null,
+    "feature_layers": [
+      6,
+      12,
+      18
+    ],
+    "vanilla_layer": 24,
+    "patch_grid": [
+      14,
+      14
+    ],
+    "embed_dim": 1024,
+    "num_register_tokens": 4,
+    "frozen": true
+  },
+  "prior": {
+    "tau": 30.0,
+    "mask_dilation": 0
+  },
+  "fusion": {
+    "lam": 0.5,
+    "normalize": "minmax",
+    "eps": 1e-08
+  },
+  "knn": {
+    "n_neighbors": 50,
+    "metric": "euclidean",
+    "use_kth_distance": true
+  },
+  "device": "cuda",
+  "seed": 0,
+  "_comment": "Hyper-parameters exactly as reported in the paper (Sections 2.1, 2.3 and 3.1). context.weights_dir must be pointed at a local DINOv3 ViT-L/16 checkpoint; the dataset and the weights are NOT bundled with this repository."
+}

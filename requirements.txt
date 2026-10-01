@@ -1,0 +1,13 @@
+# Core scientific stack. The published results used PyTorch 2.0; the code below
+# is version-tolerant and also runs on newer PyTorch releases.
+torch>=2.0
+torchvision>=0.15
+transformers>=4.56          # DINOv3 support landed in transformers 4.56
+numpy>=1.24
+scikit-learn>=1.2
+Pillow>=9.5
+matplotlib>=3.7
+
+# Optional: only needed to read a copy of the dataset stored as .zip archives.
+# The paper does not require it.
+# pandas>=2.0

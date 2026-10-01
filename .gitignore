@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Data and weights -- deliberately NOT in version control.
+# See the README sections "Dataset" and "Model weights".
+data/
+datasets/
+dataset/
+mini_dataset/
+processed_dataset/
+*.zip
+*.safetensors
+*.pth
+*.bin
+*.ckpt
+*.h5
+
+# Local experiment outputs
+runs/
+outputs/
+checkpoints/
+*.npz
+*.pt
+!configs/*.json
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
